@@ -1,0 +1,67 @@
+# Algorithmes textuels vus en CM
+
+## Exercice 1 : Algorithme Calcul-Salaire
+
+Variables
+    Sal : réel
+    Rep : Caractère
+    Cpt1, Cpt2 : entier
+
+Début
+    Cpt1 = 0
+    Cpt2 = 0
+    Répéter Jusqu’à Rep= ‘N’
+        Lire (‘saisir le salaire : ‘,Sal)
+        Si Sal > 2000 Alors 
+            Cpt1 = Cpt1+1
+        FinSi
+        Si Sal < 1000 Alors 
+            Cpt2 = Cpt2+1
+        FinSi
+        Ecrire (‘Voulez vous saisir un autre salaire ? répondez par O/N’)
+        Lire (Rep)
+    Fin répéter
+    Ecrire (‘le nombre de salaires > 2000 est : ’, Cpt1)
+    Ecrire (‘le nombre de salaires < 1000 est : ‘, Cpt2)
+Fin
+
+## Exercice 2 : Algorithme Blocage
+
+Variables
+    CO, CN, i : entier
+    Rép : chaine de caractères
+Début
+    CN = 0
+    CO = 0
+    Pour i allant de 1 à 600 faire
+        lire (‘Pour le blocage, répondez par OUI . Contre le blocage répondez par NON’, Rep)
+        Si Rep = ‘ OUI ’ alors 
+            CO = CO +1
+        Sinon 
+            Si Rep = ‘NON’ Alors 
+                CN = CN +1
+            FinSi
+        FinSi
+    FinPour
+    Ecrire (‘Pour le blocage : ‘, CO)
+    Ecrire (‘Contre le blocage : ‘, CN)
+Fin
+
+## Exercice 3 : Algorithme Stock 
+
+Variables 
+    Mstock : Tableau (1..200) d’entiers
+    i : entiers
+
+Début
+    Pour i allant de 1 à 200 faire
+        Ecrire (‘saisir la quantité du produit N° ‘ ,i)
+        lire (Mstock(i))
+    FinPour
+    Pour i allant de 1 à 200 faire
+        Si Mstock(i) < 15 Alors
+            Ecrire (‘Le produit N° ‘,i, ‘est en stock minimum, sa quantité est ‘,
+            Mstock(i))
+        FinSi
+    FinPour
+Fin 
