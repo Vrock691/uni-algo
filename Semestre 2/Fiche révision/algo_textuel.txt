@@ -60,8 +60,7 @@ Début
     FinPour
     Pour i allant de 1 à 200 faire
         Si Mstock(i) < 15 Alors
-            Ecrire (‘Le produit N° ‘,i, ‘est en stock minimum, sa quantité est ‘,
-            Mstock(i))
+            Ecrire (‘Le produit N° ‘,i, ‘est en stock minimum, sa quantité est ‘,Mstock(i))
         FinSi
     FinPour
 Fin 
