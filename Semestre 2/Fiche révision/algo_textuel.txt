@@ -64,3 +64,45 @@ Début
         FinSi
     FinPour
 Fin 
+
+## Exercice 4 : Algorithme Étudiant licence
+
+Variables 
+    TabNotes : TABLEAU[1..nb] réels
+    Max, i, k, nb, Num : entiers
+    Somme, moyenne : réels
+
+Début
+    Lire (‘Saisir le nombre d’étudiants : ’, nb)
+
+    Pour i allant de 1 à nb faire
+        Lire(TabNotes(i))
+    FinPour
+
+    Ecrire(TabNotes(3))
+
+    Lire(‘Donnez le Numéro de l’étudiant : ‘ ,Num)
+    Ecrire TabNotes(Num)
+
+    Trier TabNotes par ordre décroissant
+    Pour i allant de 1 à 5 faire
+        Ecrire(‘L’étudiant N° ‘,i,’ a la note : ‘,TabNotes (i))
+    FinPour
+    
+    Somme = 0
+    Moyenne = 0
+    Pour i allant de 1 à nb faire
+        Somme = Somme + TabNotes (i)
+    FinPour
+    Moyenne = Somme /nb
+    Ecrire (‘La moyenne du groupe est ‘, Moyenne)
+
+    Max = 0
+    Pour i allant de 1 à nb faire
+        Si TabNotes (i) > Max Alors 
+            Max=TabNotes(i)
+            K = i
+        FinSi
+    FinPour
+    Ecrire (‘La plus haute note est : ‘ ,Max, ‘de l’étudiant N°’, k) 
+Fin
