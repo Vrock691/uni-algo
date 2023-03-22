@@ -1,0 +1,65 @@
+# Algorithmes textuels
+
+# Exercice 1 : Algorithme Recherche de lettre dans une chaîne
+
+Procédure Compter(mot, lettre : chaine)
+    Variables
+        NombreLettre : entier
+        caractère : chaine
+    Début 
+        Pour caractère dans mot Faire
+            Si caractère == lettre Alors NombreLettre = NombreLettre + 1
+            Fin Si
+        Fin Pour
+        Retourner NombreLettre
+    Fin
+
+Variables
+    Mot, Lettre : chaine
+    NombreLettre : entier
+
+Début
+    Saisir('Entrez le mot', Mot)
+    Saisir('Entrez la lettre', Lettre)
+    Ecrire('La lettre apparait ', Compter(Mot, Lettre), ' fois)
+Fin
+    
+# Exercice 2 : Al
+# Exercice 3 : Algorithme comptage des lettres d'un mot
+# Exercice 4 
+# Exercice 5
+
+Algori annagrammes(mot_1,mot_2):
+    anagrammes = 0
+    if len(mot_1)!=len(mot_2):
+        rep = False
+    else:
+        for lettres1 in mot_1:
+            for lettres2 in mot_2:
+                if lettres1 == lettres2:
+                    anagrammes +=1
+        if anagrammes == len(mot_2):
+            rep = True
+    return rep
+
+
+# Exercice 6
+Algorithme ChiffreCesar
+	var 
+		mot : str
+		decalage : int
+	Début
+		alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		mot = mot en MAJUSCULE
+		nouveauMot=""
+		Pour chaque lettres dans le mot :
+			Pour chaque indice de 0 à la longueur d’alphabet :
+				Si lettres = alphabet[indice] et indice < ou = 26 – decalage :
+					indiceLettres = indice + decalage
+					nouveauMot+= alphabet[indiceLettres]
+				Sinon si ettres = alphabet[indice] et indice > 26 – decalage :
+					Nouveaudecalage = indice + decalage - 26
+					indiceLettres = Nouveaudecalage
+					nouveauMot+=alphabet[indiceLettres]
+		retourner nouveauMot
+	Fin
