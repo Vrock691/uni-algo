@@ -11,20 +11,42 @@ def Compter(mot, lettre):
 
 ## Exercice 2
 
-def dinstincts(mot):
-    lettre=mot
+def Dinstincts(mot):
+    lettres=mot
     lettre_unique = []
     lettre_fini=""
-    [lettre_unique.append(lettre) for lettre in lettre if lettre not in lettre_unique]
+    [lettre_unique.append(lettre) for lettre in lettres if lettre not in lettre_unique]
     for i in range(0,len(lettre_unique)):
         lettre_fini+=lettre_unique[i]
     return(lettre_fini)
 
+
+    dico={}
+    NouveauMot=""
+    for lettres in mot:
+        if lettres not in dico:
+            dico[lettres]=1
+    for cles in dico:
+        NouveauMot+=cles
+    return NouveauMot
+
 ## Exercice 3
 
+def frequences(mot):
+    """
+    Entrée : Un mot : str
+    Sortie : Un dictionnaire avec le nombre d'occurences de chaque caractères
+    Fonction : compte le nombre d'occurences de chaque lettres dans la phrase et la renvoie sous forme de dictionnaire
+    """
+    dico ={}
+    for lettres in mot:
+        if lettres not in dico:
+            dico[lettres]=1
+        else:
+            dico[lettres]+=1
+    return dico
 
 # Exercice 4
-
 
 def inclusion(mot_1, mot_2) :
     mot_1=mot_1.upper()
@@ -49,30 +71,9 @@ def annagrammes(mot_1,mot_2):
             rep = True
     return rep
 
-
 #Exercice 6
 
 def chiffre_cesar(mot,decalage):
-    """
-    Rajouter dans le module « » la fonction chiffre_cesar(mot,decalage), laquelle renvoie une chaîne de caractères
-    - mot représente une chaîne de caractères
-    - décalage est un entier que l’on considère positif
-    - La fonction renvoie l’équivalent après cryptage du mot
-    - L’algorithme de cryptographie consiste à remplacer chaque lettre d’un mot par une autre lettre en
-    opérant un décalage dans l’alphabet. On considère que toutes les lettres sont en majuscule (26 lettres
-    en tout, de ‘A’ à ‘Z’). Par exemple, « TOTO » avec un décalage de 2, deviendrait « VQVQ ».
-    - Attention, si le décalage nous fait déborder de ‘Z’, on recommence au début de l’alphabet. Par
-    exemple, « ZAZA » avec un décalage de 3 devient « CDCD ».
-    Remarque : (1) Une piste possible consiste à former une chaîne de référence avec toutes les lettres de
-    l’alphabet (« ABCDEFGHIJKLMNOPQRSTUVWXYZ »), vous pourrez ainsi y trouver la lettre à
-    coder et la valeur de substitution après décalage. (2) find() permet de trouver la position d’une
-    lettre dans un mot (ex. « carte ».find(« a ») renvoie 1 [puisque les indices commencent à 0]).
-    Dans votre programme principal (exercice6.py), vous devez :
-     Importer le module
-     Effectuer la saisie du mot et le convertir en majuscule
-     Effectuer la saisie du décalage
-     Faire appel à la fonction pour produire le mot crypté
-    """
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     mot = mot.upper()
     nouveauMot=""

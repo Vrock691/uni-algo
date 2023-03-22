@@ -13,41 +13,69 @@ Procédure Compter(mot, lettre : chaine)
         Fin Pour
         Retourner NombreLettre
     Fin
-
-Variables
-    Mot, Lettre : chaine
-    NombreLettre : entier
-
-Début
-    Saisir('Entrez le mot', Mot)
-    Saisir('Entrez la lettre', Lettre)
-    Ecrire('La lettre apparait ', Compter(Mot, Lettre), ' fois)
-Fin
     
-# Exercice 2 : Al
+# Exercice 2 : Algorithme Recherche de lettre distincte
+
+Procédure Dinstincts(mot : chaine)
+    Variables 
+        lettre, lettre_fini : chaine
+        lettre_unique : TABLEAU 
+        i : entier
+    
+    Début
+        lettre = mot
+        
+
+
 # Exercice 3 : Algorithme comptage des lettres d'un mot
+
+Procédure frequences(mot : chaine)
+    Variables
+        Dico = Dictionnaire  {
+
+        }
+
 # Exercice 4 
+
+Algorithme inclusion
+    var 
+        mot_1 : chaines 
+        mot_2 : chaines
+    Début
+        mot_1=mot_1.upper()
+        mot_2=mot_2.upper()
+    Si mot_1 est dans mot_2:
+        écrire True
+    Sinon:
+        écrire False
+    Fin
+
 # Exercice 5
 
-Algori annagrammes(mot_1,mot_2):
-    anagrammes = 0
-    if len(mot_1)!=len(mot_2):
-        rep = False
-    else:
-        for lettres1 in mot_1:
-            for lettres2 in mot_2:
-                if lettres1 == lettres2:
-                    anagrammes +=1
-        if anagrammes == len(mot_2):
-            rep = True
-    return rep
+Algorithme annagrammes
+    var 
+        mot_1 : chaines 
+        mot_2 : chaines
+    Début
+        anagrammes = 0
+        Si longueur mot_1 !=longueur mot_2 :
+            rep = False
+        Sinon:
+            Pour chaque lettres1 dans mot_1:
+                Pour chaque lettres2 dans mot_2:
+                    Si lettres1 == lettres2:
+                        anagrammes +=1
+            Si anagrammes == longueur mot_2:
+                rep = True
+        écrire rep
+    Fin
 
 
 # Exercice 6
 Algorithme ChiffreCesar
 	var 
-		mot : str
-		decalage : int
+		mot : chaines
+		decalage : entier
 	Début
 		alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		mot = mot en MAJUSCULE
@@ -61,5 +89,5 @@ Algorithme ChiffreCesar
 					Nouveaudecalage = indice + decalage - 26
 					indiceLettres = Nouveaudecalage
 					nouveauMot+=alphabet[indiceLettres]
-		retourner nouveauMot
+		écrire nouveauMot
 	Fin
