@@ -1,3 +1,3 @@
 # Uni Algo
 
-Bienvenue sur ce repo où sont disponible les codes pythons et les algo textuels des cours d'algo.
+Bienvenue sur le repository où nous partageons nos réponses aux TD d'algorithmiques dispensés par l'université Lumière Lyon 2.
