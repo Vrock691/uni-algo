@@ -1,7 +1,7 @@
-from chaine import Dinstincts
+from chaine import Distincts
 
 mot=""
 mot=input("entrez un mot ")
 mot.upper()
-simple=Dinstincts(mot)
+simple=Distincts(mot)
 print(simple)

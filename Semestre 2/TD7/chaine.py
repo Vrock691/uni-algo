@@ -11,16 +11,7 @@ def Compter(mot, lettre):
 
 ## Exercice 2
 
-def Dinstincts(mot):
-    lettres=mot
-    lettre_unique = []
-    lettre_fini=""
-    [lettre_unique.append(lettre) for lettre in lettres if lettre not in lettre_unique]
-    for i in range(0,len(lettre_unique)):
-        lettre_fini+=lettre_unique[i]
-    return(lettre_fini)
-
-
+def Distincts(mot):
     dico={}
     NouveauMot=""
     for lettres in mot:

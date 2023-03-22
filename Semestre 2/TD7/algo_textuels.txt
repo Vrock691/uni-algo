@@ -17,27 +17,45 @@ Procédure Compter(mot, lettre : chaine)
 # Exercice 2 : Algorithme Recherche de lettre distincte
 
 Procédure Dinstincts(mot : chaine)
-    Variables 
-        lettre, lettre_fini : chaine
-        lettre_unique : TABLEAU 
-        i : entier
+    Variables
+        dico : Dictionnaire()
+        NouveauMot : chaine
     
     Début
-        lettre = mot
-        
-
-
+        Pour lettres dans mot Faire
+            Si lettres est dans mot Alors
+                dico.(lettre) = 1
+            Fin Si
+            Pour cles dans dico Faire
+                NouveauMot = NouveauMot+cles
+            Fin Pour
+        Fin Pour
+        Retourner NouveauMot
+    Fin
+    
 # Exercice 3 : Algorithme comptage des lettres d'un mot
 
 Procédure frequences(mot : chaine)
-    Variables
-        Dico = Dictionnaire  {
+	Variables
+        dico : dictionnaire()
+    	NouveauMot : chaine
+	début
+	
+    	pour lettres dans mot faire
+     		si lettres pas dans dico:
+            	dico[lettres]=1
+			fin si
+		fin pour
+    	pour cles dans dico faire
+        	NouveauMot+=cles
+		fin pour
+    	Retourner NouveauMot
+	fin
 
-        }
 
 # Exercice 4 
 
-Algorithme inclusion
+Algorithme inclusion(mot_1,mot_2)
     var 
         mot_1 : chaines 
         mot_2 : chaines
@@ -52,7 +70,7 @@ Algorithme inclusion
 
 # Exercice 5
 
-Algorithme annagrammes
+Algorithme annagrammes(mot_1,mot_2)
     var 
         mot_1 : chaines 
         mot_2 : chaines
@@ -72,7 +90,7 @@ Algorithme annagrammes
 
 
 # Exercice 6
-Algorithme ChiffreCesar
+Algorithme ChiffreCesar(mot,decalage)
 	var 
 		mot : chaines
 		decalage : entier
