@@ -14,7 +14,7 @@ Procédure SaisieListe(nombreElements : entier) :
         Retourner listeFinale
     Fin
 
-Procédure SauvegardeListeFichier(Liste : TABLEAU[0...nombreElements] de entier, Fichier : chaine) :
+Procédure SauvegardeListeFichier(Liste : TABLEAU[0...nombreElements] de entier, Fichier : Fichier texte) :
     Variables
         Element : entier
     Début   
@@ -22,11 +22,12 @@ Procédure SauvegardeListeFichier(Liste : TABLEAU[0...nombreElements] de entier,
         Pour chaque Element de Liste Faire
             Ecrire(Fichier, Element)
         Fin Pour
+        Fermer(Fichier)
     Fin
 
 Variables
     nombreElements : entier
-    Fichier : chaine
+    Fichier : Fichier texte
     Liste : TABLEAU[0...nombreElements] de entier
 Début
     Saisir("Entrez le nombre d'éléments de la liste", nombreElements)
@@ -37,3 +38,103 @@ Début
 Fin
 
 # Exercice 2 : Algorithme Lecture d'un fichier de valeurs
+
+Procédure LireFichier(Fichier : Fichier texte) :
+    Variables
+        i : entier
+        Liste : TABLEAU[0...nombreElements]
+    Début
+        Ouvrir(Fichier)
+        Pour i allant de 0 à longueur de Fichier Faire
+            Lire(Fichier, Liste[i])
+        Fin Pour
+        Fermer(Fichier)
+        Retourner Liste
+    Fin
+
+Variables
+    Liste : TABLEAU[0...nombreElements]
+    Fichier : Fichier texte 
+    Moyenne, Somme : entier
+Début   
+    Saisir('Entrez le chemin du fichier', Fichier)
+    Liste = LireFichier(Fichier)
+    Afficher(Liste)
+    Pour chaque Élement de Liste Faire
+        Somme = Somme + Élement
+    Fin Pour
+    Moyenne = Somme / (Longueur de Liste)
+    Afficher(Moyenne)
+Fin
+
+# Exercice 3 : Algorithme Couple de valeurs, écriture
+
+Importer Procédure SaisieListe de Exercice 1
+
+Procédure CalculVecteurCroisé(ListeX, ListeY : TABLEAU[0...nombreElements] de rééls)
+    Variables
+        résultatSomme : réél
+        i : entier
+    Début
+        Pour i allant de 1 à longueur de ListeX Faire
+            résultatSomme = résultatSomme + ( ListeX[i] * ListeY[i] )
+        Fin Pour
+        Retourner résultatSomme
+    Fin
+
+Procédure SauvergarderListes(ListeX, ListeY : TABLEAU[0...nombreElements] de rééls, Fichier : Fichier texte)
+    Variables
+        i : entier
+    Début
+        Ouvrir(Fichier)
+        Pour i allant de 0 à Longueur de ListeX Faire : 
+            Ecrire(Fichier, str(ListeX[i])+";"+str(ListeY[i]))
+        Fin Pour
+        Fermer(Fichier)
+    Fin
+
+Variables
+    nombreElements : entier
+    Fichier : Fichier texte
+    ListeX, ListeY : TABLEAU[0...nombreElements] de rééls
+Début
+    Saisir('Entrez la longueur des listes', nombreElements)
+    ListeX = SaisieListe(nombreElements)
+    ListeY = SaisieListe(nombreElements)
+    Afficher(CalculVecteurCroisé(ListeX, ListeY))
+    Saisir('Entrez le chemin du fichier', Fichier)
+    SauvergarderListes(ListeX, ListeY, Fichier)
+Fin
+
+# Exercice 4 : Algorithme Couple de valeurs, Lecture
+
+Importer Procédure CalculVecteurCroisé de Exercice 3
+
+Procédure chargerListes(Fichier : Fichier texte)
+    Variables
+        ListeX, ListeY : TABLEAU[0...n] de rééls 
+        ListeFusionnées : TABLEAU[0...1] de TABLEAU[0...n] de rééls 
+        Ligne : chaine
+    Début
+        Pour i allant de 0 à nombres de lignes de Fichier Faire :
+            ListeX = Séparer Fichier[i] avec ";" et prendre le premier élément
+            ListeY = Séparer Fichier[i] avec ";" et prendre le deuxième élément
+        Fin Pour
+        ListeFusionnées = [ListeX, ListeY]
+        Retourner ListeFusionnées
+    Fin
+
+Variables
+    Fichier : Fichier texte
+    ListeX, ListeY : TABLEAU[0...n] de rééls
+    ListeFusionnées : TABLEAU[0...1] de TABLEAU[0...n] de rééls 
+
+Début
+    Saisir('Entrez le nom du fichier.txt', Fichier)
+    ListeFusionnées = chargerListes(Fichier)
+    ListeX = ListeFusionnées[0]
+    ListeY = ListeFusionnées[1]
+    Afficher(ListeX)
+    Afficher(ListeY)
+    Afficher(CalculVecteurCroisé(ListeX, ListeY))
+Fin
