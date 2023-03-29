@@ -1,0 +1,39 @@
+# Algorithmes textuels
+
+# Exercice 1 : Algorithme Ecriture fichier de valeurs
+
+Procédure SaisieListe(nombreElements : entier) :
+    Variables
+        listeFinale : TABLEAU[0...nombreElements] de entier
+        valeur : entier
+    Début 
+        Pour i allant de 0 à nombreElements Faire :
+            Saisir('Entrez une valeur entière :', valeur)
+            Ajouter valeur à la fin de listeFinale
+        Fin Pour
+        Retourner listeFinale
+    Fin
+
+Procédure SauvegardeListeFichier(Liste : TABLEAU[0...nombreElements] de entier, Fichier : chaine) :
+    Variables
+        Element : entier
+    Début   
+        Ouvrir(Fichier)
+        Pour chaque Element de Liste Faire
+            Ecrire(Fichier, Element)
+        Fin Pour
+    Fin
+
+Variables
+    nombreElements : entier
+    Fichier : chaine
+    Liste : TABLEAU[0...nombreElements] de entier
+Début
+    Saisir("Entrez le nombre d'éléments de la liste", nombreElements)
+    Liste = SaisieListe(nombreElements)
+    Afficher(Liste)
+    Saisir("Entrez le chemin d'accès du fichier suivi de .txt", Fichier)
+    SauvegardeListeFichier(Liste, Fichier)
+Fin
+
+# Exercice 2 : Algorithme Lecture d'un fichier de valeurs
