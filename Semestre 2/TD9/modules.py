@@ -1,10 +1,10 @@
 import os
-os.chdir('TD9')
+os.chdir('/workspaces/uni-algo/Semestre 2/TD9')
 
 
 def SaisieListe(nombreElements):
     listeFinale = []
-    for i in range(0, nombreElements - 1):
+    for i in range(0, nombreElements):
         valeur = int(input('Entrez une valeur entière : '))
         listeFinale.append(valeur)
     return listeFinale
@@ -13,7 +13,7 @@ def SaisieListe(nombreElements):
 def SauvegardeListeFichier(Liste, Chemin):
     Fichier = open(Chemin+'.txt', 'a')
     for element in Liste:
-        Fichier.write("\n", str(element))
+        Fichier.write("\n" + str(element))
     Fichier.close()
 
 
